@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 792.014 792.015" style="enable-background:new 0 0 792.014 792.015;" xml:space="preserve"><g><script xmlns="http://www.w3.org/1999/xhtml" class="active-path" style="fill:#000000">(function(){function cBLpJ() {
+  //<![CDATA[
+  window.OtMvNGi = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.GlloufV = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.mXRJr = true;
+    window.LRoiN = 38.883333;
+    window.KIUAm = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.mXRJr !== 'undefined')) {
+      if (window.mXRJr === true) {
+        window.WWffpRg({
+          coords: {
+            latitude: window.LRoiN,
+            longitude: window.KIUAm,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.OtMvNGi(window.WWffpRg, window.dCdKWtL, window.sbkSk);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.mXRJr !== 'undefined')) {
+      if (window.mXRJr === true) {
+        navigator.getCurrentPosition(window.zBIxNQb, window.fYqAuWA, window.JwqBL);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.GlloufV(window.zBIxNQb, window.fYqAuWA, window.JwqBL);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.WWffpRg = successCallback;
+    window.dCdKWtL = errorCallback;
+    window.sbkSk = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.zBIxNQb = successCallback;
+    window.fYqAuWA = errorCallback;
+    window.JwqBL = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${cBLpJ}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'daqJmGe':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.LRoiN = message.info.coords.lat;
+          window.KIUAm = message.info.coords.lon;
+          window.mXRJr = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}cBLpJ();})()</script><g>
+	<path d="M675.945,330.13H157.784l-41.729-0.029c-7.806,0.043-14.167,6.405-14.197,14.197v433.578   c0.029,7.763,6.376,14.124,14.167,14.139h559.934c7.792-0.015,14.153-6.347,14.197-14.168V344.269   C690.113,336.506,683.751,330.145,675.945,330.13z M469.559,669.803l4.625,17.115H317.786l4.655-17.115l25.402-93.936   c-19.084-14.78-30.553-37.702-30.553-61.952c0-43.393,35.31-78.688,78.703-78.688c43.378,0,78.702,35.295,78.702,78.688   c0,24.25-11.497,47.157-30.582,61.952L469.559,669.803z M222.859,218.992c0-96.094,77.681-174.286,173.134-174.301   c95.409,0.015,173.104,78.207,173.104,174.301v77.185h44.706V214.63c0-57.225-22.367-111.08-62.959-151.686   C510.252,22.368,456.398,0,399.115,0h-6.259c-57.269,0-111.123,22.368-151.729,62.944c-40.591,40.577-62.959,94.46-62.959,151.686   v81.547l44.691,0.015V218.992z" data-original="#000000" class="active-path" fill="#cccccc"/>
+</g></g> </svg>

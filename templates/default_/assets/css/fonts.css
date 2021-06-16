@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'GothamBold';
+	src: url('fonts/gb2/gothambold1.eot');
+	src: local('fonts/gb2/gothambold1'), url('fonts/gb2/gothambold1.woff') format('woff'), url('fonts/gb2/gothambold1.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+	font-family: 'GothamBook';
+	src: url('fonts/gb/GothamBook.eot');
+	src: local('fonts/gb/GothamBook'), url('fonts/gb/GothamBook.woff') format('woff'), url('fonts/gb/GothamBook.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+	font-family: 'GothamMedium';
+	src: url('fonts/gm/Gotham-Medium.eot?') format('eot'), 
+	     url('fonts/gm/Gotham-Medium.woff') format('woff'), 
+	     url('fonts/gm/Gotham-Medium.ttf')  format('truetype'),
+	     url('fonts/gm/Gotham-Medium.svg#Gotham-Medium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url('fonts/gl/GothamLight.otf')  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('fonts/hvn/helveticaneue.eot');
+  src: url('fonts/hvn/helveticaneue1.eot?#iefix') format('embedded-opentype'),
+  url('fonts/hvn/helveticaneue.woff') format('woff'),
+  url('fonts/hvn/helveticaneue.ttf') format('truetype'),
+  url('fonts/hvn/helveticaneue.svg#helvetica_neueregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url('fonts/hvn/helveticaneue_light.eot');
+  src: url('fonts/hvn/helveticaneue_light.eot?#iefix') format('embedded-opentype'),
+  url('fonts/hvn/helveticaneue_light.woff') format('woff'),
+  url('fonts/hvn/helveticaneue_light.ttf') format('truetype'),
+  url('fonts/hvn/helveticaneue_light.svg#helvetica_neuelight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueUltraLight';
+  src: url('fonts/hvn/helveticaneue-ultralight.eot');
+  src: url('fonts/hvn/helveticaneue-ultralight.eot?#iefix') format('embedded-opentype'),
+  url('fonts/hvn/helveticaneue-ultralight.woff') format('woff'),
+  url('fonts/hvn/helveticaneue-ultralight.ttf') format('truetype'),
+  url('fonts/hvn/helveticaneue-ultralight.svg#helvetica_neueultralight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: 'Georgia2';
+  src: url('fonts/Georgia/Georgia.ttf')  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display:swap;
+}

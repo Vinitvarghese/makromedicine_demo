@@ -1,0 +1,47 @@
+/* DATA ATBLE */
+@import "https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css";
+@import "https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css";
+
+/* SOURCE SANS PRO FONT*/
+@import "https://fonts.googleapis.com/css?family=Source+Sans+Pro";
+
+/* Raleway font */
+@import "fonts.css?v=2";
+
+/* Bootstrap css */
+@import "bootstrap.css";
+
+/* Bootstrap Theme css */
+@import "bootstrap-theme.css";
+
+/* Font Awesome css*/
+@import "font-awesome.min.css";
+
+/* Font Awesome css*/
+@import "icomoon/icomoon.css";
+
+/* Toast CSS */
+@import "toastr.min.css";
+
+/* bootstrap-datepicker css */
+@import "bootstrap-datepicker.min.css";
+
+/* plugin section */
+@import "../plugin/selectpicker/dist/css/bootstrap-select.min.css";
+
+/* bootstrap-tagsinput */
+@import "bootstrap-tagsinput.css";
+
+/* bootstrap-tagsinput */
+@import "intlTelInput.min.css";
+
+/* Style css*/
+@import "system.css";
+
+.new_person_line {
+    display: none;
+}
+
+form.userSettings{
+	display: block !important;
+}

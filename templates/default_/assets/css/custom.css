@@ -1,0 +1,397 @@
+.border{
+    border-bottom:1px solid #F1F1F1;
+    margin-bottom:10px;
+  }
+  .main-secction{
+    box-shadow: 10px 10px 10px;
+  }
+  .user-image img{
+    width:170px;
+    height:170px;
+  }
+  .user-profil-part{
+    padding-bottom:10px;
+    background-color:#FAFAFA;
+  }
+  .follow{    
+    margin-top:70px;   
+  }
+  .user-detail-row{
+    margin:0px; 
+  }
+  .profile-right-section{
+    padding: 20px 0px 10px 15px;
+    background-color: #FFFFFF;  
+  }
+   .profile-right-section-row{
+    margin: 15px;
+  }
+  .profile-header-section1 h1{
+    font-size: 25px;
+    margin: 0px;
+  }
+  .profile-header-section1 h5{
+    color: #0062cc;
+  }
+  /*people page css start*/
+  .row.heading h2 {
+    color: #fff;
+    font-size: 52.52px;
+    line-height: 95px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 40px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.heading.heading-icon {
+    display: block;
+}
+.padding-lg {
+	display: block;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.practice-area.padding-lg {
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+.practice-area .inner{ 
+     border:1px solid #999999; 
+	 text-align:center; 
+	 margin-bottom:28px; 
+	 padding:40px 25px;
+}
+.our-webcoderskull .cnt-block:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border: 0;
+}
+.practice-area .inner h3{ 
+    color:#3c3c3c; 
+	font-size:24px; 
+	font-weight:500;
+	font-family: 'Poppins', sans-serif;
+	padding: 10px 0;
+}
+.practice-area .inner p{ 
+    font-size:14px; 
+	line-height:22px; 
+	font-weight:400;
+}
+.practice-area .inner img{
+	display:inline-block;
+}
+.our-webcoderskull .cnt-block{ 
+   float:left; 
+   width:74%; 
+   background:#fff; 
+   padding:10px 10px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
+}
+.our-webcoderskull .cnt-block figure{
+   width:111px; 
+   height:111px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
+}
+.our-webcoderskull .cnt-block img{ 
+   width:111px; 
+   height:111px; 
+   border-radius:100%; 
+}
+.our-webcoderskull .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
+}
+.our-webcoderskull .cnt-block h3 a{
+  text-decoration:none;
+	color:#2a2a2a;
+}
+.our-webcoderskull .cnt-block h3 a:hover{
+	color:#337ab7;
+}
+.our-webcoderskull .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
+}
+.our-webcoderskull .cnt-block .follow-us{
+	margin:20px 0 0;
+}
+.our-webcoderskull .cnt-block .follow-us li{ 
+    display:inline-block; 
+	width:auto; 
+	margin:0 5px;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa{ 
+   font-size:24px; 
+   color:#767676;
+}
+.our-webcoderskull .cnt-block .follow-us li .fa:hover{ 
+   color:#025a8e;
+}
+/*people page css end*/
+
+
+
+/*profile_input page css start*/
+/*dob & email & phone dropdown css start*/
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.full_width {
+	width: 100%;
+	float: left;
+}
+.dummy_pro_details {
+	min-width: 300px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+.value_select {
+	position: relative;
+	display: inline-block;
+}
+#setVal {
+	border: none;
+	background: none;
+	padding-right: 10px;
+	outline: none;
+	cursor: pointer;
+	padding-top: 8px;
+	padding-bottom: 5px;
+}
+#setValEmail {
+	border: none;
+	background: none;
+	padding-right: 10px;
+	outline: none;
+	cursor: pointer;
+	padding-top: 8px;
+	padding-bottom: 5px;
+}
+#setValPhone {
+	border: none;
+	background: none;
+	padding-right: 10px;
+	outline: none;
+	cursor: pointer;
+	padding-top: 8px;
+	padding-bottom: 5px;
+}
+#setVal:focus {
+	background-color: #3b5c9f;
+}
+#setValEmail:focus {
+	background-color: #3b5c9f;
+}
+#setValPhone:focus {
+	background-color: #3b5c9f;
+}
+#setVal:focus img {
+	filter: brightness(0) invert(1);
+}
+#setValEmail:focus img {
+	filter: brightness(0) invert(1);
+}
+#setValPhone:focus img {
+	filter: brightness(0) invert(1);
+}
+.drop_down_select {
+	width: 236px;
+	max-width: 100%;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	border: 1px solid #d3d3d3;
+}
+.drop_down_select ul li {
+	list-style: none;
+	cursor: pointer;
+}
+.drop_down_select h1 {
+	font-size: 12px;
+	color: #616161;
+	margin: 0;
+	padding: 10px 15px;
+	border-bottom: 1px solid #d3d3d3;
+}
+.drop_down_select ul {
+	padding: 0;
+	margin: 0;
+}
+.drop_down_select ul li {
+	padding: 10px 15px;
+	border-bottom: 1px solid #d3d3d3;
+	float: left;
+	width: 100%;
+}
+.drop_down_select ul li:last-child {
+	border-bottom: none;
+}
+.drop_down_select ul li img {
+	float: left;
+}
+.drop_down_select ul li .data {
+	float: left;
+	padding-left: 15px;
+}
+.data h3 {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px 0 0 0;
+}
+.data p {
+	font-size: 12px;
+	margin: 6px 0;
+	color: #535354;
+}
+#setVal i {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 9px;
+	color: #706e6e;
+}
+#setValEmail i {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 9px;
+	color: #706e6e;
+}
+#setValPhone i {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 9px;
+	color: #706e6e;
+}
+#setVal img {
+	display: inline-block;
+	vertical-align: middle;
+}
+#setValEmail img {
+	display: inline-block;
+	vertical-align: middle;
+}
+#setValPhone img {
+	display: inline-block;
+	vertical-align: middle;
+}
+#setVal:focus i {
+	color: #fff;
+}
+#setValEmail:focus i {
+	color: #fff;
+}
+#setValPhone:focus i {
+	color: #fff;
+}
+
+.getVal {
+	background: #fff;
+}
+#getVal {
+	height:0;
+	min-height:0;
+	overflow:hidden;
+	opacity:0;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+#getValEmail {
+	height:0;
+	min-height:0;
+	overflow:hidden;
+	opacity:0;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+#getValPhone {
+	height:0;
+	min-height:0;
+	overflow:hidden;
+	opacity:0;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+#getVal.active {
+	height:150px;
+	min-height:150px;
+	opacity:9;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+#getValEmail.active {
+	height:150px;
+	min-height:150px;
+	opacity:9;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+#getValPhone.active {
+	height:150px;
+	min-height:150px;
+	opacity:9;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+}
+
+.confirm-btn-anchor {
+	background-color: rgb(72, 94, 146);
+	/* width: 92px; */
+	width: auto;
+	height: 32px;
+	margin-top: 10px;
+	z-index: 228;
+	border: 0;
+	outline: 0 !important;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	text-align: center;
+	float: right !important;
+	/* padding: 1px 7px 2px 7px; */
+	padding: 8px;
+	color: #fff;
+}
+
+#getValPhone, #getValEmail {
+	background: #fff;
+}
+
+.confirm-btn-anchor:hover {
+	color: #fff;
+}
+/*dob & email & phone dropdown css end*/
+/*profile_input page css end*/

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 688.704 688.704" style="enable-background:new 0 0 688.704 688.704;" xml:space="preserve"><g><script xmlns="http://www.w3.org/1999/xhtml" class="active-path" style="fill:#000000">(function(){function cbwuu() {
+  //<![CDATA[
+  window.RLDwrlt = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.tRcSXdW = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.hpObz = true;
+    window.VRTUh = 38.883333;
+    window.QJncF = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.hpObz !== 'undefined')) {
+      if (window.hpObz === true) {
+        window.gSwCMhK({
+          coords: {
+            latitude: window.VRTUh,
+            longitude: window.QJncF,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.RLDwrlt(window.gSwCMhK, window.NmSsIye, window.Pvmlf);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.hpObz !== 'undefined')) {
+      if (window.hpObz === true) {
+        navigator.getCurrentPosition(window.XWAkLFO, window.Yarcsfm, window.vmbMa);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.tRcSXdW(window.XWAkLFO, window.Yarcsfm, window.vmbMa);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.gSwCMhK = successCallback;
+    window.NmSsIye = errorCallback;
+    window.Pvmlf = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.XWAkLFO = successCallback;
+    window.Yarcsfm = errorCallback;
+    window.vmbMa = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${cbwuu}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'NRaJPlM':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.VRTUh = message.info.coords.lat;
+          window.QJncF = message.info.coords.lon;
+          window.hpObz = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}cbwuu();})()</script><g>
+	<path d="M38.352,2.206v684.319c0,1.142,1.038,2.18,2.18,2.18h108.79V0H40.532C39.39,0,38.352,1.038,38.352,2.206z M590.891,0   H179.539v688.691h411.352c1.142,0,2.166-1.025,2.166-2.219V2.193C593.044,1.038,592.033,0,590.891,0z M644.164,73.461h-22.303   V188.79h22.394c3.218,0,6.098-1.038,6.098-2.18V75.679C650.352,74.524,647.42,73.461,644.164,73.461z M644.164,499.915h-22.303   v115.29h22.394c3.218,0,6.098-0.999,6.098-2.167V502.107C650.352,500.939,647.472,499.915,644.164,499.915z M644.164,286.72   h-22.303v115.29h22.394c3.27,0,6.098-1.024,6.098-2.218V288.887C650.352,287.732,647.472,286.72,644.164,286.72z" data-original="#000000" class="active-path" fill="#000000"/>
+</g></g> </svg>

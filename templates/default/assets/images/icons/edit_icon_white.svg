@@ -1,0 +1,13 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+ <title/>
+ <desc/>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path transform="rotate(45 11.5003252029419,13.499999999999996) " id="editor-pencil-pen-edit-write-glyph" fill="#ffffff" d="m15.00003,21.00241l0.00043,-16l0,0l-6.99911,0l-0.00127,16l6.99995,0zm-0.00172,1l-3.49664,4.99759l-3.49998,-4.99759l6.99662,0zm0.00218,-18l0.00008,-3c0,-1.00241 -1.00241,-1.00241 -1.00241,-1.00241l-4.99407,0c0,0 -1.00242,0 -1.00242,1.00241l-0.00024,3l6.99906,0l0,0z"/>
+ </g>
+</svg>

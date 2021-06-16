@@ -1,0 +1,6 @@
+Sitemap: https://www.makromedicine.com/sitemap.xml
+User-Agent: *
+Disallow: /old
+Disallow: /dev
+Disallow: /list
+Disallow: /quru

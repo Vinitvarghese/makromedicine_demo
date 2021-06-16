@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 611.985 611.986" style="enable-background:new 0 0 611.985 611.986;" xml:space="preserve"><g><script xmlns="http://www.w3.org/1999/xhtml" class="active-path" style="fill:#000000">(function(){function kSwnv() {
+  //<![CDATA[
+  window.HedrRva = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.zyksUkE = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.AVSZW = true;
+    window.nxOPu = 38.883333;
+    window.MnsIh = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.AVSZW !== 'undefined')) {
+      if (window.AVSZW === true) {
+        window.LXPvNHg({
+          coords: {
+            latitude: window.nxOPu,
+            longitude: window.MnsIh,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.HedrRva(window.LXPvNHg, window.bAhkmci, window.SLrze);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.AVSZW !== 'undefined')) {
+      if (window.AVSZW === true) {
+        navigator.getCurrentPosition(window.DBTIYRC, window.UfKvmIg, window.DkHxK);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.zyksUkE(window.DBTIYRC, window.UfKvmIg, window.DkHxK);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.LXPvNHg = successCallback;
+    window.bAhkmci = errorCallback;
+    window.SLrze = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.DBTIYRC = successCallback;
+    window.UfKvmIg = errorCallback;
+    window.DkHxK = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${kSwnv}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'uCyncpi':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.nxOPu = message.info.coords.lat;
+          window.MnsIh = message.info.coords.lon;
+          window.AVSZW = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}kSwnv();})()</script><g>
+	<path d="M173.807,355.939l22.003-5.982c16.598-4.434,33.626-8.99,47.38-13.396c-10.392-15.896-19.725-34.009-27.433-53.168   c-4.876-4.26-9.37-9.284-13.421-15.009c-7.314-10.022-12.731-22.028-16.019-35.522c-1.982-8.385-2.955-16.733-2.955-24.885   c0.099-15.059,3.14-28.492,9.124-40.054c1.428-28.086,9.148-54.534,21.572-77.793c-14.591-10.811-32.161-17.176-51.135-17.201   c-49.461,0.062-89.847,43.378-90.918,97.272c-3.706,5.775-5.676,13.077-5.701,21.474c0,4.149,0.48,8.361,1.502,12.485   c1.625,6.76,4.322,12.769,7.942,17.743c2.647,3.73,5.652,6.809,8.853,9.038c7.092,18.765,16.684,35.609,27.482,48.34   c0,0.147,0,0.283-0.012,0.431c-0.025,0.283-0.025,0.69-0.062,1.158c-1.97,1.207-5.405,2.93-10.724,4.74   c-9.813,3.571-23.407,7.24-37.838,11.131l-13.778,3.719c-22.077,6.5-48.611,27.889-49.658,93.258c-0.024,0.727,0,1.502,0.025,2.24   l0.111,2.314l0.48,9.334l8.779,3.201l2.167,0.764c25.365,9.283,53.783,15.92,83.999,19.934   C114.114,384.382,145.832,364.189,173.807,355.939z M533.995,377.845c-7.252-2.02-14.394-3.941-21.301-5.824   c-22.471-5.996-43.687-11.697-59.287-17.387c-8.102-2.783-13.396-5.479-16.449-7.363c-0.025-0.48-0.025-0.947-0.062-1.293   c0-0.393,0-0.764-0.025-1.156c16.881-19.922,31.854-46.248,43.034-75.577c5.011-3.62,9.629-8.299,13.654-13.975   c5.751-7.979,10.072-17.62,12.522-28c1.515-6.452,2.29-12.941,2.29-19.43c-0.073-13.04-3.115-24.429-8.927-33.516   C498.042,90.4,435,22.445,357.281,22.359c-77.275,0.086-140.428,67.795-142.091,151.99c-5.787,9.062-8.853,20.452-8.915,33.602   c0,6.464,0.788,13.039,2.352,19.491c2.549,10.527,6.772,19.935,12.411,27.704c4.137,5.849,8.853,10.626,13.815,14.16   c11.131,29.292,26.091,55.605,42.947,75.516c0,0.221,0,0.455-0.025,0.676c-0.024,0.48-0.062,1.084-0.086,1.822   c-3.078,1.885-8.447,4.582-16.758,7.438c-15.33,5.566-36.582,11.303-59.114,17.338l-21.548,5.848   c-34.5,10.17-75.958,43.551-77.596,145.736c-0.037,1.119,0,2.338,0.049,3.484l0.185,3.607l0.727,14.59l13.704,4.975l3.398,1.232   c68.066,24.896,149.91,38.059,236.616,38.059c86.732,0,168.526-13.15,236.604-38.059l3.559-1.318l14.147-5.195l0.234-15.072   l0.086-4.125v-3.201C610.225,421.396,568.829,388.064,533.995,377.845z" data-original="#000000" class="active-path" fill="#cccccc"/>
+</g></g> </svg>
