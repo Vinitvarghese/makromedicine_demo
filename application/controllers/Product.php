@@ -1079,7 +1079,7 @@ class Product extends Site_Controller {
                     }
                     $this->data['selected_product_type_names'] = implode( ', ', $this->data['selected_product_type_names'] );
 
-                    $this->data['get_standart'] = $this->User_model->get_standart( 'wc_standart_translation.name st_name ,wc_user_standart_image.*', [ 'user_id' => $user->id ] );
+                    $this->data['get_standart'] = $this->User_model->get_standart([ 'user_id' => $user->id ], 'wc_standart_translation.name st_name ,wc_user_standart_image.*' );
 
                     $this->data['unit']     = $this->Unit_model->fields( [
                         'id',

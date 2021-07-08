@@ -39,7 +39,7 @@ class Company extends Site_Controller {
 
             // print_r($this->data['company']);die();
 
-            $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+            $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*' );
 
             if (!empty($group)) {
                 $group_id                          = $group[0]['group_id'];
@@ -436,7 +436,7 @@ class Company extends Site_Controller {
             $this->data['company'] = $this->data['UserData'];
 
 
-            $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+            $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*' );
 
             if (!empty($group)) {
                 $group_id                          = $group[0]['group_id'];
@@ -644,7 +644,7 @@ class Company extends Site_Controller {
                 } else {
                     $this->data['tags'] = '';
                 }
-                $this->data['get_standart'] = $this->User_model->get_standart( 'wc_standart_translation.name st_name ,wc_user_standart_image.*', [ 'user_id' => $user->id ] );
+                $this->data['get_standart'] = $this->User_model->get_standart([ 'user_id' => $user->id ], 'wc_standart_translation.name st_name ,wc_user_standart_image.*' );
                 if ( isset( $user->product_type ) && ! empty( $user->product_type ) && $user->product_type != null ) {
                     $this->data['selected_product_type']       = json_decode( $user->product_type );
 
@@ -715,7 +715,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $this->data['UserData'];;
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*' );
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -953,7 +953,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $this->data['UserData'];
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*');
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -1204,7 +1204,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $this->data['UserData'];
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*' );
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -1413,7 +1413,7 @@ class Company extends Site_Controller {
 
 
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*');
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -1722,7 +1722,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $user ;
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $user->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $user->id, '*');
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -2309,7 +2309,7 @@ class Company extends Site_Controller {
             }
             $this->data['selected_product_type_names'] = implode(', ', $this->data['selected_product_type_names']);
 
-            $this->data['get_standart'] = $this->User_model->get_standart('wc_standart_translation.name st_name ,wc_user_standart_image.*', ['user_id' => $user->id]);
+            $this->data['get_standart'] = $this->User_model->get_standart(['user_id' => $user->id], 'wc_standart_translation.name st_name ,wc_user_standart_image.*');
 
             $this->data['unit'] = $this->Unit_model->fields([
                 'id',
@@ -2338,7 +2338,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $this->data['UserData'];
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*');
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];
@@ -2591,7 +2591,7 @@ class Company extends Site_Controller {
 
         $this->data['company'] = $this->data['UserData'];
 
-        $group                             = $this->User_model->get_user_group( '*', 'user_id = ' . $this->data['company']->id );
+        $group                             = $this->User_model->get_user_group('user_id = ' . $this->data['company']->id, '*' );
 
         if (!empty($group)) {
             $group_id                          = $group[0]['group_id'];

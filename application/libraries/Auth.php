@@ -3266,7 +3266,7 @@ class Auth {
 		return $content;
 	}
 
-	public function update_user_totp_secret($user_id = FALSE, $secret) {
+	public function update_user_totp_secret( $secret,$user_id = FALSE) {
 
 		if ($user_id == FALSE)
 			$user_id = $this->CI->session->userdata('id');
