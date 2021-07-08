@@ -23,7 +23,7 @@ class User_model extends Webcoder_Model {
 		parent::__construct();
 	}
 
-	public function get_user_group( $select = '*', $where ) {
+	public function get_user_group($where, $select = '*' ) {
 		$this->db->select( $select );
 		$this->db->from( 'wc_user_to_group' );
 
@@ -245,7 +245,7 @@ class User_model extends Webcoder_Model {
 		return $this->db->insert( $table, $data );
 	}
 
-	public function select_any( $select = '*', $table, $where, $order = false ) {
+	public function select_any( $table, $where, $select = '*', $order = false ) {
 		$this->db->select( $select );
 
 		$this->db->from( $table );
@@ -276,7 +276,7 @@ class User_model extends Webcoder_Model {
 
 		 $this->db->delete( 'wc_user_standart_image' );
 
-		 $st_ids=$this->get_standart('*', [ 'user_id' => $array['user_id']]);
+		 $st_ids=$this->get_standart( [ 'user_id' => $array['user_id']],'*');
 		 $ids=[];
 
 		 if(!empty($st_ids)){
@@ -298,7 +298,7 @@ class User_model extends Webcoder_Model {
 		return $this->db->insert( 'wc_user_standart_image', $data );
 	}
 
-	public function get_standart( $select = '*', $where ) {
+	public function get_standart($where, $select = '*') {
 		$this->db->select( $select );
 		$this->db->from( 'wc_user_standart_image' );
 		$this->db->join( 'wc_standart_translation', 'wc_standart_translation.standart_id=wc_user_standart_image.standart_id' );

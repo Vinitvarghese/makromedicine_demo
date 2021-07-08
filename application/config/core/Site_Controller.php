@@ -137,7 +137,7 @@ class Site_Controller extends Webcoder_Controller
                   'images'        => $this->auth->get_user()->images,
                   'group_id'  =>  $this->auth->get_user()->user_groups_id,
               ];
-              $this->data['get_user_group'] = $this->User_model->get_user_group('*',['user_id'=>$this->data['user']['id']]);
+              $this->data['get_user_group'] = $this->User_model->get_user_group(['user_id'=>$this->data['user']['id']],'*');
               if($this->data['get_user_group'] != false)
               {
                   foreach ($this->data['get_user_group'] as $key=>$value)

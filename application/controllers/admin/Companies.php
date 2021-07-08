@@ -221,7 +221,7 @@ class Companies extends Admin_Controller {
                 }
 
                 // selected group
-                $user_group = $this->{$this->model}->get_user_group('*',['user_id'=>$id]);
+                $user_group = $this->{$this->model}->get_user_group(['user_id'=>$id],'*');
                 if($user_group){
                     $user_group = $user_group[0]['group_id'];
                 }
@@ -411,7 +411,7 @@ class Companies extends Admin_Controller {
                     $group[$item['id']] = $item['name'];
                 }
 
-                $user_group = $this->{$this->model}->get_user_group('*',['user_id'=>$id]);
+                $user_group = $this->{$this->model}->get_user_group(['user_id'=>$id],'*');
                 if($user_group){
                     $user_group = $user_group[0]['group_id'];
                 }

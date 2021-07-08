@@ -54,10 +54,10 @@ class Profile extends Site_Controller
             }
 
 
-            $this->data['get_standart'] = $this->User_model->get_standart('wc_standart_translation.name st_name ,wc_user_standart_image.*', ['user_id' => $this->data['user']['id']]);
+            $this->data['get_standart'] = $this->User_model->get_standart(['user_id' => $this->data['user']['id']],'wc_standart_translation.name st_name ,wc_user_standart_image.*');
 
 
-            $this->data['get_user_group'] = $this->User_model->get_user_group('*', ['user_id' => $this->data['user']['id']]);
+            $this->data['get_user_group'] = $this->User_model->get_user_group( ['user_id' => $this->data['user']['id']],'*');
             if ($this->data['get_user_group'] != false) {
                 foreach ($this->data['get_user_group'] as $key => $value) {
                     $this->data['user']['group_id'] = $value['group_id'];
@@ -212,7 +212,7 @@ class Profile extends Site_Controller
             /* $check_group_type = ($this->uri->segment('4') == 'interests') ? 2 : 1;
             $this->data['groups']           = $this->Group_model->fields(['id', 'name'])->filter(['type' => $check_group_type])->all();
              */
-            $this->data['get_standart'] = $this->User_model->get_standart('wc_standart_translation.name st_name ,wc_user_standart_image.*', ['user_id' => $this->data['user']['id']]);
+            $this->data['get_standart'] = $this->User_model->get_standart(['user_id' => $this->data['user']['id']],'wc_standart_translation.name st_name ,wc_user_standart_image.*');
 
 
 
@@ -365,7 +365,7 @@ class Profile extends Site_Controller
             if (is_null($this->data['standart'])) {
                 $this->data['standart'] = array();
             }
-            $standart_images     = $this->User_model->get_standart('wc_standart_translation.name st_name ,wc_user_standart_image.*', ['user_id' => $this->data['user']['id']]);
+            $standart_images     = $this->User_model->get_standart(['user_id' => $this->data['user']['id']],'wc_standart_translation.name st_name ,wc_user_standart_image.*');
             $standart_images_ids = array();
             if ($standart_images) {
                 foreach ($standart_images as $key => $value) {

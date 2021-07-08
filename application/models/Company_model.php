@@ -81,7 +81,7 @@ class Company_model extends Webcoder_Model {
         return $query->result_object();
     }
 
-    public function get_standart( $select = '*', $where ) {
+    public function get_standart($where, $select = '*' ) {
         $this->db->select( $select );
         $this->db->from( 'wc_user_standart_image' );
         $this->db->join( 'wc_standart_translation', 'wc_standart_translation.standart_id=wc_user_standart_image.standart_id' );
@@ -107,7 +107,7 @@ class Company_model extends Webcoder_Model {
 
         $this->db->delete( 'wc_user_standart_image' );
 
-        $st_ids=$this->get_standart('*', [ 'user_id' => $array['user_id']]);
+        $st_ids=$this->get_standart([ 'user_id' => $array['user_id']],'*');
         $ids=[];
 
         if(!empty($st_ids)){

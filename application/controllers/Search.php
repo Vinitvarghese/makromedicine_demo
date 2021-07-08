@@ -1225,7 +1225,7 @@ class Search extends Site_Controller {
 
 
 					if ( $this->data['get_user'] ) {
-						$this->data['pr_type'] = $this->User_model->select_any( 'user_id, product_type_id', 'wc_user_interests_product_type', [ 'user_id in(' . $user_id . ')' => null ], 'product_type_id' );
+						$this->data['pr_type'] = $this->User_model->select_any(  'wc_user_interests_product_type', [ 'user_id in(' . $user_id . ')' => null ],'user_id, product_type_id', 'product_type_id' );
 						$this->data['pr']      = [];
 						if ( $this->data['pr_type'] ) {
 							$input = array_map( "unserialize", array_unique( array_map( "serialize", $this->data['pr_type'] ) ) );
@@ -1234,7 +1234,7 @@ class Search extends Site_Controller {
 							}
 						}
 
-						$this->data['user_group']  = $this->User_model->select_any( 'user_id, group_id', 'wc_user_interests_status', [ 'user_id in(' . $user_id . ')' => null ], 'group_id' );
+						$this->data['user_group']  = $this->User_model->select_any(  'wc_user_interests_status', [ 'user_id in(' . $user_id . ')' => null ],'user_id, group_id', 'group_id' );
 						$this->data['user_groups'] = [];
 						if ( $this->data['user_group'] ) {
 							$input = array_map( "unserialize", array_unique( array_map( "serialize", $this->data['user_group'] ) ) );
@@ -1243,7 +1243,7 @@ class Search extends Site_Controller {
 							}
 						}
 
-						$this->data['user_standart']  = $this->User_model->select_any( 'user_id, standart_id', 'wc_user_interests_standart', [ 'user_id in(' . $user_id . ')' => null ], 'standart_id' );
+						$this->data['user_standart']  = $this->User_model->select_any(  'wc_user_interests_standart', [ 'user_id in(' . $user_id . ')' => null ],'user_id, standart_id', 'standart_id' );
 						$this->data['user_standarts'] = [];
 						if ( $this->data['user_standart'] ) {
 							$input = array_map( "unserialize", array_unique( array_map( "serialize", $this->data['user_standart'] ) ) );
